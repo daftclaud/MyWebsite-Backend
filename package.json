@@ -1,46 +1,26 @@
 {
-  "name": "mywebsite-backend",
-  "version": "1.0.0",
-  "description": "A project containing the firebase functions that run my website.",
-  "main": "index.js",
+  "name": "functions",
   "scripts": {
-    "test": "test",
-    "tsc": "tsc",
-    "build": "tslint --fix && tsc",
-    "commit": "npx git-cz"
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daftclaud/MyWebsite-Backend.git"
+  "engines": {
+    "node": "8"
   },
-  "keywords": [
-    "firebase",
-    "functions",
-    "node"
-  ],
-  "author": "Claudio Del Valle",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/daftclaud/MyWebsite-Backend/issues"
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
   },
-  "homepage": "https://github.com/daftclaud/MyWebsite-Backend#readme",
-  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^12.12.14",
-    "cz-conventional-changelog": "^3.0.2",
-    "husky": "^3.1.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.2"
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2",
+    "firebase-functions-test": "^0.1.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tslint index.ts --fix",
-      "pre-push": "tslint index.ts"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "private": true
 }
