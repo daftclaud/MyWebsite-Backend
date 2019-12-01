@@ -1,0 +1,30 @@
+{
+  "name": "mywebsite-backend",
+  "version": "1.0.0",
+  "description": "A project containing the firebase functions that run my website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daftclaud/MyWebsite-Backend.git"
+  },
+  "keywords": [
+    "firebase",
+    "functions",
+    "node"
+  ],
+  "author": "Claudio Del Valle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daftclaud/MyWebsite-Backend/issues"
+  },
+  "homepage": "https://github.com/daftclaud/MyWebsite-Backend#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "typescript": "^3.7.2"
+  }
+}
