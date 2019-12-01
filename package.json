@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build": "tslint --fix && tsc",
+    "commit": "npx git-cz"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,20 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^12.12.14",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0",
+    "tslint": "^5.20.1",
     "typescript": "^3.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tslint index.ts --fix",
+      "pre-push": "tslint index.ts"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
