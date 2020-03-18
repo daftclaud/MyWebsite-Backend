@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        service_account_key: ${{ secrets.GCP_DB_KEY }}
         export_default_credentials: true
     - run: gcloud info
     - run: gcloud config set project $PROJECT_ID
